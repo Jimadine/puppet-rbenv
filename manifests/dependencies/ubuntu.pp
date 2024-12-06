@@ -3,7 +3,7 @@ class rbenv::dependencies::ubuntu {
   if ! defined(Package['libc6-dev'])        { package { 'libc6-dev':        ensure => installed } }
   if ! defined(Package['bison'])            { package { 'bison':            ensure => installed } }
   if ! defined(Package['openssl'])          { package { 'openssl':          ensure => installed } }
-  case $::lsbdistcodename {
+  case $facts['os']['distro']['codename'] {
     lenny: {
       if ! defined(Package['libreadline5'])     { package { 'libreadline5':     ensure => installed } }
       if ! defined(Package['libreadline5-dev']) { package { 'libreadline5-dev': ensure => installed } }
