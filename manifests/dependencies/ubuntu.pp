@@ -20,6 +20,10 @@ class rbenv::dependencies::ubuntu {
       if ! defined(Package['libreadline8'])     { package { 'libreadline8':     ensure => installed } }
       if ! defined(Package['libreadline-dev'])  { package { 'libreadline-dev':  ensure => installed } }
     }
+    noble: {
+      if ! defined(Package['libreadline8t64'])  { package { 'libreadline8t64':  ensure => installed } }
+      if ! defined(Package['libreadline-dev'])  { package { 'libreadline-dev':  ensure => installed } }
+    }
     default : {
       if ! defined(Package['libreadline6'])     { package { 'libreadline6':     ensure => installed } }
       if ! defined(Package['libreadline6-dev']) { package { 'libreadline6-dev': ensure => installed } }
